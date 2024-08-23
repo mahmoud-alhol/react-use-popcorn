@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-function Search({query, setQuery}) {
+function Search({ query, setQuery }) {
   return (
     <input
       className="search"

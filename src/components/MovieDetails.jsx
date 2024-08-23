@@ -46,7 +46,33 @@ function MovieDetails({ selectedId, onClose, movieKey, onAddWatched, watched }) 
       }
       getMovieDetails();
     },
-    [selectedId]
+    [selectedId, movieKey]
+  );
+
+  useEffect(
+    function () {
+      function callBack(e) {
+        if (e.code === "Escape") {
+          onClose();
+        }
+      }
+      document.addEventListener("keydown", callBack);
+      return function () {
+        document.removeEventListener("keydown", callBack);
+      };
+    },
+    [onClose]
+  );
+
+  useEffect(
+    function () {
+      if (!title) return;
+      document.title = title;
+      return function () {
+        document.title = "usePopcorn";
+      };
+    },
+    [title]
   );
 
   return (
