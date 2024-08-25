@@ -21,9 +21,9 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+  "Open Sans", "Helvetica Neue", sans-serif;
+  
   color: var(--color-text);
   background-color: var(--color-background-900);
   padding: 2.4rem;
@@ -56,6 +56,12 @@ body {
   border-radius: 0.9rem;
   overflow: scroll;
   position: relative;
+}
+
+.box::-webkit-scrollbar,
+.list::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
 }
 
 .loader {
@@ -144,6 +150,7 @@ body {
 .list-watched {
   height: calc(100% - 9rem);
 }
+
 
 .list li {
   position: relative;
